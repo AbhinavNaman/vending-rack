@@ -13,6 +13,7 @@ interface Props {
 
 export default function EditForm({ bin, onSave, onCancel, allBins = [] }: Props) {
   const [form, setForm] = useState<Bin>({ ...bin });
+  console.log(form)
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [dirty, setDirty] = useState(false);
 
@@ -46,8 +47,8 @@ export default function EditForm({ bin, onSave, onCancel, allBins = [] }: Props)
     if (!target) return; // safety
 
     // swap positions
-    const updatedForm = { ...form, row, col };
-    const swappedTarget = { ...target, row: form.row, col: form.col };
+    const updatedForm = { ...form, row, col }; //current item data + new row/col    
+    const swappedTarget = { ...target, row: form.row, col: form.col }; // target item data + old row/col
     setForm(updatedForm);
 
     // save both bins back (we'll delegate final save to parent)
@@ -159,7 +160,8 @@ export default function EditForm({ bin, onSave, onCancel, allBins = [] }: Props)
           {Array.from({ length: 20 }, (_, i) => {
             const row = Math.floor(i / 5) + 1;
             const col = (i % 5) + 1;
-            const isCurrent = row === form.row && col === form.col;
+            const isCurrent = ((row === form.row) && (col === form.col));
+            console.log("pos:", row, col, isCurrent, form.row, form.col);
             return (
               <button
                 key={`${row}-${col}`}
@@ -168,7 +170,7 @@ export default function EditForm({ bin, onSave, onCancel, allBins = [] }: Props)
                 className={`h-12 text-xs rounded flex items-center justify-center
                   ${
                     isCurrent
-                      ? "bg-green-600 text-white !important"
+                      ? "!bg-green-600 !text-white"
                       : "bg-gray-700 text-gray-300 hover:bg-gray-600"
                   }`}
               >
