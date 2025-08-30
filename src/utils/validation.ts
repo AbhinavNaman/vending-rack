@@ -12,3 +12,6 @@ export function validateBin(bin: Bin) {
 
   return errors;
 }
+
+//this is although used only in EditForm, it is a utility function so placing it here.
+// any other validation functions can also go here.

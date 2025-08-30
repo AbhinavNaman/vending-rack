@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { Bin, Rack } from "../../types";
+import type { Bin } from "../../types";
 import { computeStatus, pctLevel } from "../../utils/status";
 import { validateBin } from "../../utils/validation";
 import { useUnsavedGuard } from "../../hooks/useUnsavedGaurd";

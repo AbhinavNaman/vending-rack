@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { Rack, Status, Bin } from "./types";
 import sampleRack from "./data/sampleRack.json";
 import RackHeader from "./components/RackHeader/RackHeader";
@@ -16,10 +16,13 @@ export default function App() {
   
 
   const visibleBins = rack.bins.filter((b) => {
+    //1. filter by search query
     const matchQuery =
       query === "" ||
       b.skuName?.toLowerCase().includes(query.toLowerCase()) ||
       b.skuCode?.toLowerCase().includes(query.toLowerCase());
+
+      //2. filter by status
     const matchStatus =
       statusFilter === "All" ||
       computeStatus(b.stock, b.capacity) === statusFilter;

@@ -1,4 +1,3 @@
-import React from "react";
 import type { Bin } from "../../types";
 import { computeStatus, pctLevel } from "../../utils/status";
 

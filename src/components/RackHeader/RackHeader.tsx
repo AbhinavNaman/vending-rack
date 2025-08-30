@@ -1,4 +1,3 @@
-import React from "react";
 import type { Rack } from "../../types";
 import { rackUtilization, statusCounts } from "../../utils/status";
 

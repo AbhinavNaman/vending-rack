@@ -23,7 +23,7 @@ export default function BinGrid({ bins, onOpen }: Props) {
     refs.current[focusedIndex]?.focus();
   }, [focusedIndex]);
 
-  function handleKeyDown(e: React.KeyboardEvent, idx: number, bin: Bin | null) {
+  function handleKeyDown(e: React.KeyboardEvent, bin: Bin | null) {
     if (e.key === "ArrowRight") {
       e.preventDefault();
       setFocusedIndex((i) => Math.min(19, i + 1));
@@ -59,8 +59,8 @@ export default function BinGrid({ bins, onOpen }: Props) {
             role="gridcell"
             aria-label={`Bin ${bin.binId}, ${bin.skuName || "unassigned"}`}
             tabIndex={idx === focusedIndex ? 0 : -1}
-            ref={(el) => (refs.current[idx] = el)}
-            onKeyDown={(e) => handleKeyDown(e, idx, bin)}
+            ref={(el) => {(refs.current[idx] = el)}}
+            onKeyDown={(e) => handleKeyDown(e, bin)}
           >
             <BinCard bin={bin} onClick={() => onOpen(bin.binId)} />
           </div>
@@ -72,8 +72,8 @@ export default function BinGrid({ bins, onOpen }: Props) {
               (idx % 5) + 1
             }`}
             tabIndex={idx === focusedIndex ? 0 : -1}
-            ref={(el) => (refs.current[idx] = el)}
-            onKeyDown={(e) => handleKeyDown(e, idx, null)}
+            ref={(el) => {(refs.current[idx] = el)}}
+            onKeyDown={(e) => handleKeyDown(e, null)}
             className="glass-card rounded-lg p-3 flex items-center justify-center text-gray-500 text-sm"
           >
             Unassigned
