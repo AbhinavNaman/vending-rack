@@ -1,0 +1,29 @@
+{
+  "rackId": "RACK-A1",
+  "location": "Lobby - Floor 1",
+  "bins": [
+    { "binId": "R1C1", "row": 1, "col": 1, "skuName": "Chips", "skuCode": "CHP-01", "photoUrl": "", "stock": 32, "capacity": 40, "uom": "pcs", "sensor": "IR", "lastRestocked": "2025-08-01" },
+    { "binId": "R1C2", "row": 1, "col": 2, "skuName": "Soda", "skuCode": "SOD-01", "photoUrl": "", "stock": 8, "capacity": 20, "uom": "bottles", "sensor": "Scale", "lastRestocked": "2025-08-04" },
+    { "binId": "R1C3", "row": 1, "col": 3, "skuName": "Candy Bar", "skuCode": "CND-01", "photoUrl": "", "stock": 0, "capacity": 30, "uom": "pcs", "sensor": "IR" },
+    { "binId": "R1C4", "row": 1, "col": 4, "skuName": "Juice", "skuCode": "JCE-01", "photoUrl": "", "stock": 10, "capacity": 10, "uom": "bottles", "sensor": "Scale" },
+    { "binId": "R1C5", "row": 1, "col": 5, "skuName": "", "skuCode": "", "stock": 0, "capacity": 0 },
+
+    { "binId": "R2C1", "row": 2, "col": 1, "skuName": "Cookies", "skuCode": "CKS-01", "stock": 15, "capacity": 50, "uom": "pcs" },
+    { "binId": "R2C2", "row": 2, "col": 2, "skuName": "Nuts", "skuCode": "NUT-01", "stock": 20, "capacity": 25, "uom": "packs" },
+    { "binId": "R2C3", "row": 2, "col": 3, "skuName": "Energy Drink", "skuCode": "ENG-01", "stock": 2, "capacity": 12, "uom": "cans" },
+    { "binId": "R2C4", "row": 2, "col": 4, "skuName": "", "skuCode": "", "stock": 0, "capacity": 0 },
+    { "binId": "R2C5", "row": 2, "col": 5, "skuName": "Water Bottle", "skuCode": "WAT-01", "stock": 50, "capacity": 50, "uom": "bottles" },
+
+    { "binId": "R3C1", "row": 3, "col": 1, "skuName": "Chips", "skuCode": "CHP-02", "stock": 10, "capacity": 20, "uom": "pcs" },
+    { "binId": "R3C2", "row": 3, "col": 2, "skuName": "Gum", "skuCode": "GUM-01", "stock": 5, "capacity": 25, "uom": "packs" },
+    { "binId": "R3C3", "row": 3, "col": 3, "skuName": "Soda", "skuCode": "SOD-02", "stock": 15, "capacity": 30, "uom": "bottles" },
+    { "binId": "R3C4", "row": 3, "col": 4, "skuName": "Juice", "skuCode": "JCE-02", "stock": 0, "capacity": 0 },
+    { "binId": "R3C5", "row": 3, "col": 5, "skuName": "Energy Bar", "skuCode": "ENB-01", "stock": 6, "capacity": 12, "uom": "pcs" },
+
+    { "binId": "R4C1", "row": 4, "col": 1, "skuName": "", "skuCode": "", "stock": 0, "capacity": 0 },
+    { "binId": "R4C2", "row": 4, "col": 2, "skuName": "Cookies", "skuCode": "CKS-02", "stock": 12, "capacity": 40, "uom": "pcs" },
+    { "binId": "R4C3", "row": 4, "col": 3, "skuName": "Candy Bar", "skuCode": "CND-02", "stock": 1, "capacity": 20, "uom": "pcs" },
+    { "binId": "R4C4", "row": 4, "col": 4, "skuName": "Water Bottle", "skuCode": "WAT-02", "stock": 25, "capacity": 50, "uom": "bottles" },
+    { "binId": "R4C5", "row": 4, "col": 5, "skuName": "Nuts", "skuCode": "NUT-02", "stock": 0, "capacity": 20, "uom": "packs" }
+  ]
+}
