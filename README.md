@@ -1,4 +1,5 @@
 # Vending Rack Frontend
+[LINK] : [[vending-rack.vercel.app](https://vending-rack.vercel.app/)]
 
 A vending-machine style UI for managing rack bins (React + TypeScript + Tailwind).
 
