@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { Bin, Rack } from "../../types";;
 import EditForm from "./EditForm";
 import ViewMode from "./ViewMode";
