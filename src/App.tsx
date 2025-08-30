@@ -12,6 +12,7 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<Status | "All">("All");
   const [selectedBinId, setSelectedBinId] = useState<string | null>(null);
+  const [isEdit, setIsEdit] = useState(false);
 
   
 
@@ -53,8 +54,8 @@ function handleSave(updated: Bin) {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-vmMetal to-black text-white p-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-vmMetal to-black text-white p-6 pl-12">
+      <div className="max-w-7xl mx-auto  ">
         <RackHeader rack={rack} />
         <FiltersBar
           query={query}
@@ -62,7 +63,7 @@ function handleSave(updated: Bin) {
           statusFilter={statusFilter}
           setStatusFilter={setStatusFilter}
         />
-        <BinGrid bins={visibleBins} onOpen={(id) => setSelectedBinId(id)} />
+        <BinGrid bins={visibleBins} onOpen={(id) => setSelectedBinId(id)} setIsEdit={setIsEdit}/>
       </div>
 
       <DetailsPanel
@@ -70,6 +71,8 @@ function handleSave(updated: Bin) {
         bin={selectedBin}
         onSave={handleSave}
         onClose={() => setSelectedBinId(null)}
+        isEdit ={isEdit}
+        setIsEdit = {setIsEdit}
       />
     </div>
   );

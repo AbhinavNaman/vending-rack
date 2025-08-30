@@ -4,9 +4,10 @@ import { computeStatus, pctLevel } from "../../utils/status";
 interface Props {
   bin: Bin;
   onClick: () => void;
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function BinCard({ bin, onClick }: Props) {
+export default function BinCard({ bin, onClick, setIsEdit }: Props) {
   const status = computeStatus(bin.stock, bin.capacity);
   const pct = pctLevel(bin.stock, bin.capacity);
 
@@ -21,7 +22,7 @@ export default function BinCard({ bin, onClick }: Props) {
     <div
       role="gridcell"
       tabIndex={0}
-      onClick={onClick}
+      onClick={()=>{onClick(); setIsEdit(false);}}
       title={`SKU: ${bin.skuCode || "-"} | Threshold: ${
         bin.threshold ?? "-"
       } | Last restocked: ${bin.lastRestocked || "-"}`}

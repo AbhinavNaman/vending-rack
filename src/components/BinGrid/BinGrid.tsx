@@ -5,9 +5,10 @@ import BinCard from "./BinCard";
 interface Props {
   bins: Bin[];
   onOpen: (binId: string) => void;
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function BinGrid({ bins, onOpen }: Props) {
+export default function BinGrid({ bins, onOpen, setIsEdit }: Props) {
   const [focusedIndex, setFocusedIndex] = useState(0);
   const refs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -62,7 +63,7 @@ export default function BinGrid({ bins, onOpen }: Props) {
             ref={(el) => {(refs.current[idx] = el)}}
             onKeyDown={(e) => handleKeyDown(e, bin)}
           >
-            <BinCard bin={bin} onClick={() => onOpen(bin.binId)} />
+            <BinCard bin={bin} onClick={() => onOpen(bin.binId)} setIsEdit={setIsEdit}/>
           </div>
         ) : (
           <div

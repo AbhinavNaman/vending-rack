@@ -23,6 +23,7 @@ export default function RackHeader({ rack }: Props) {
 
   return (
     <div className="bg-black/40 rounded-xl p-4 mb-4 flex flex-col md:flex-row md:items-center md:justify-between">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQE1sz0fb9kfhg/company-logo_200_200/B4EZisEPGGGYAI-/0/1755233448805/source_asia_logo?e=1759363200&v=beta&t=Apvovz0XPMZflngAb2zVYvRtVyvBRRbLvVSX9_czh6o" alt="Source Asia" className="h-10 mb-2 md:mb-0 rounded-full"/>
       <div>
         <h2 className="text-xl font-semibold">
           Rack <span className="text-green-400">{rack.rackId}</span>
@@ -33,12 +34,14 @@ export default function RackHeader({ rack }: Props) {
       </div>
 
       <div className="flex gap-4 mt-3 md:mt-0 items-center">
-        <span className="text-gray-300">Utilization: {util}%</span>
+        <div>
         <div className="flex gap-2">
           <StatusBadge label="Full" value={counts.Full} color="bg-green-500" />
           <StatusBadge label="Half" value={counts.Half} color="bg-blue-500" />
           <StatusBadge label="Low" value={counts.Low} color="bg-amber-500" />
           <StatusBadge label="Empty" value={counts.Empty} color="bg-gray-500" />
+        </div>
+        <span className="text-gray-300">Utilization: {util}%</span>
         </div>
         <button
           onClick={exportRack}

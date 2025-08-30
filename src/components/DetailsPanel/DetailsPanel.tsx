@@ -8,10 +8,12 @@ interface Props {
   onSave: (bin: Bin) => void;
   onClose: () => void;
   rack: Rack; // to know other bins for swap
+  isEdit: boolean;
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function DetailsPanel({ bin, onSave, onClose, rack }: Props) {
-  const [isEdit, setIsEdit] = useState(false);
+export default function DetailsPanel({ bin, onSave, onClose, rack, isEdit, setIsEdit }: Props) {
+//   const [isEdit, setIsEdit] = useState(false);
 
   if (!bin) return null;
 
